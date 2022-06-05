@@ -53,3 +53,63 @@
    1. Rendered it in `application.erb`
 9. Removed `<p style="color: green"><%= notice %></p>` from the first line of `index.html.erb` and `show.html.erb`
 10. Corrected the delete method for table in `index.html.erb`.
+
+## --
+
+### Video 6
+
+1. Visited https://rubygems.org/gems
+2. Took `devise` gem via code snippet for gemfile
+3. Follow the instructioons here https://rubydoc.info/github/heartcombo/devise
+4. `rails generate devise:install`
+5. Read the instructions on console.
+6. Add `config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }` to `config/environments/development.rb` and also in commented form in production.rb for future.
+7. Already did point 2 & 3 from the instructions in console
+
+```bash
+   Depending on your application's configuration some manual setup may be required:
+
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
+
+       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+     In production, :host should be set to the actual host of your application.
+
+     * Required for all applications. *
+
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
+
+       root to: "home#index"
+
+     * Not required for API-only Applications *
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+     * Not required for API-only Applications *
+
+  4. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+
+     * Not required *
+
+===============================================================================
+```
+
+8. To generate signup/signin pages etc etc use this command next `rails g devise:views`
+9. `rails generate devise user` this created a migration.
+10. Now push the migration `rails db:migrate`
+11. Try `rails routes` to check all the routes
+12. Add new btns in `_header.html.erb` and add the method names with `_path` by checking the console output of `rails routes`.
+13. Added `user_signed_in?` if else statements in `_header.html.erb`.
+14. For error like `No route matches [GET] "/users/sign_out"`........... Do this
+    1. In config/initializers/devise.rb do the following
+    2. `config.sign_out_via = :get`
+    3. And the error solved !!!!
