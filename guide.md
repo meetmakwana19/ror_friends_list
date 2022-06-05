@@ -35,3 +35,21 @@
 9. Edited `_header.html.rb` for `link_to`s of friends operations.
 10. Can edit HTML in files like `index.html.rb` in app/views/friends
     1. Look into form partial `_form.html.erb`
+
+## --
+
+### V5
+
+1. Created table in `index.html.rb`
+2. Gave btns and jumbotron in `show.html.rb`
+3. Returned back to Bootstrap v4.6 from v5.1 for jumbotron CSS to work.
+4. Removed search from `_header.html.rb`
+5. Removed `<%# render @friend %>` from `show.html.erb` and totally edited the jumbotron and whole document.
+6. Adding form classes in the divs of `_form.html.erb`
+   1. `class="form-group"` in the main divs
+   2. `class:"form-control"` in the `form.text_field`
+7. Edited `new.html.erb` and `edit.html.eerb` with Bootstrap classes.
+8. Created new `_alerts.html.erb` in app/layouts and added alert from bootstrap.
+   1. Rendered it in `application.erb`
+9. Removed `<p style="color: green"><%= notice %></p>` from the first line of `index.html.erb` and `show.html.erb`
+10. Corrected the delete method for table in `index.html.erb`.
