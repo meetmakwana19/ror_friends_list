@@ -195,3 +195,4 @@ User must exist
 3. Commented sqlite from gemfile and added it to development
 4. Added `pg` gem from https://rubygems.org/gems/pg
 5. `bundle install --without production` but this is not working and giving deprecation error and syntax error in gemfile
+6. Removed `gem "sqlite3", "~> 1.4"` from gemfile
