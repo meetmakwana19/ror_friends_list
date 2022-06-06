@@ -154,3 +154,16 @@ User must exist
 
 11. So in app/controllers/friends_controller.rb added `:user_id` in the `friends_params` method to allow the user_id to be added in the DB.
 12. But the friend is visible in other accounts too, so solvving in next part.
+
+## --
+
+### Video 9 : Solving friends showing in all users
+
+1. In app/controllers/friends_controller.rb added `before_action` for authenticated users.
+2. Modified friends table for user info in the app/views/friends/index.html.erb
+3. `current_user` is a devise helper we are using here and there in friends_controller.rb and index.html.erb
+4. Created new method `correct_user` in the friends_controller.rb
+   1. Added `before_action` for correct_user too
+   2. associating current_user with the new friend in `def new` and `def create`
+5. Now actions are authorized yeeeee!
+6. Added if logic in the app/views/friends/index.html.erb

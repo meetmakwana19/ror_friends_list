@@ -1,6 +1,13 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: %i[ show edit update destroy ]
 
+  # before doing anything in this controller, if the user is not authenticated then dont let them do anything except viewing index and show pages. (means cant do new,edit etc)
+  before_action :authenticate_user!, except:[:index, :show]
+  # before_action :authenticate_user!
+
+  # only these actions will be permitted if the user is correct user 
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
   # GET /friends or /friends.json
   def index
     @friends = Friend.all
@@ -12,7 +19,11 @@ class FriendsController < ApplicationController
 
   # GET /friends/new
   def new
-    @friend = Friend.new
+    # created a new friend for @friend DB
+    # @friend = Friend.new
+
+    # associating current_user with the new friend 
+    @friend = current_user.friends.build
   end
 
   # GET /friends/1/edit
@@ -21,7 +32,8 @@ class FriendsController < ApplicationController
 
   # POST /friends or /friends.json
   def create
-    @friend = Friend.new(friend_params)
+    # @friend = Friend.new(friend_params)
+    @friend = current_user.friends.build(friend_params)
 
     respond_to do |format|
       if @friend.save
@@ -55,6 +67,13 @@ class FriendsController < ApplicationController
       format.html { redirect_to friends_url, notice: "Friend was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  # created new method
+  def correct_user
+    @friend = current_user.friends.find_by(id: params[:id])
+    redirect_to friends_path, notice: "Not authorized for this action !! " if @friend.nil?
+    # redirect error notice is the @friend is nill i.e not matching with the DB entry.
   end
 
   private
