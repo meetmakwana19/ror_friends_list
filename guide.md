@@ -129,3 +129,28 @@
    ```
 
 4. Adding bootstraps in edit and new in registrations dir, new in sessions dir, links in shared dir
+
+## --
+
+### Video 8
+
+1. Untill now we've 2 tables - friends & users(devise hanldes users table
+2. Visiting https://github.com/meetmakwana19/ror_friends_list/blob/master/guide.md and understood **associations**
+3. Added `belongs_to :user` to app/models/friend.rb
+4. Added `has_many :friends` to app/models/user.rb
+   1. Now these 2 files are asssociated
+5. `rails g migration add_user_id_to_friends user_id:integer:index` to create a user_id colume in the friends DB
+6. `rails db:migrate`
+7. Now check db/schema.rb and the file will be updated with user_id
+8. Delete exiting users and friends for a fresh asssociation.
+9. Go to app/views/friends/\_form.html.erb
+   1. Adding user_id field in friends using embedded ruby of `current_user.id`
+10. Error came upon adding friend
+
+```bash
+1 error prohibited this friend from being saved:
+User must exist
+```
+
+11. So in app/controllers/friends_controller.rb added `:user_id` in the `friends_params` method to allow the user_id to be added in the DB.
+12. But the friend is visible in other accounts too, so solvving in next part.
