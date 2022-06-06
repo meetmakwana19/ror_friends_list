@@ -113,3 +113,19 @@
     1. In config/initializers/devise.rb do the following
     2. `config.sign_out_via = :get`
     3. And the error solved !!!!
+
+## --
+
+### Video 7
+
+1. Initially passwords, registrations, sessions folders are to be dealth with in the app/views/devise.
+2. Adding class `form-group` to all field divs in app/views/devise/sessions/new.html and also `class:"form-control", placeholder:` in the respective fields.
+3. ```bash
+   <%= form.submit class:"btncess" btn-suc %>
+   <%# Remeber no comma here to put for class if no text %>
+
+   <%= f.submit "Log in", class:"btn btn-success"  %>
+   <%# Remeber comma here to put for class if there's text %>
+   ```
+
+4. Adding bootstraps in edit and new in registrations dir, new in sessions dir, links in shared dir
