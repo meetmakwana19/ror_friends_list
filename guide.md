@@ -167,3 +167,12 @@ User must exist
    2. associating current_user with the new friend in `def new` and `def create`
 5. Now actions are authorized yeeeee!
 6. Added if logic in the app/views/friends/index.html.erb
+
+## --
+
+### Video 10
+
+1. Changed root route to friebnds page in config/routes.rb
+2. Removed show btn and gave show functionality on clicking the name itself in app/views/friends/index.html.erb
+3. Gave delete btn for edit.html.erb
+4. Removed friends page again even when not logged in.
