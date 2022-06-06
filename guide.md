@@ -185,3 +185,13 @@ User must exist
 2. home_controller was already present and added an instance variable into `def about` method.
 3. friends_controller was created when we did scaffold suff containing operations corresponding to CRUD.
 4. **Anything put into controllers can be passed ahead. Methods can be created and ruby logic can be written to implement logics from APIs etc**
+
+## --
+
+### Video 12
+
+1. Cant use sqlite3 for production and even heroku wont let us use it for development
+2. So will use postgesql
+3. Commented sqlite from gemfile and added it to development
+4. Added `pg` gem from https://rubygems.org/gems/pg
+5. `bundle install --without production` but this is not working and giving deprecation error and syntax error in gemfile
