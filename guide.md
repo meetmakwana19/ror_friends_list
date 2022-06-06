@@ -176,3 +176,12 @@ User must exist
 2. Removed show btn and gave show functionality on clicking the name itself in app/views/friends/index.html.erb
 3. Gave delete btn for edit.html.erb
 4. Removed friends page again even when not logged in.
+
+## --
+
+### Video 11
+
+1. Looking at controllers
+2. home_controller was already present and added an instance variable into `def about` method.
+3. friends_controller was created when we did scaffold suff containing operations corresponding to CRUD.
+4. **Anything put into controllers can be passed ahead. Methods can be created and ruby logic can be written to implement logics from APIs etc**
