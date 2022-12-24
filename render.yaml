@@ -1,6 +1,7 @@
 databases:
-  - name: sqlite3
+  - name: postgresql
     ipAllowList: []
+    plan: free
 
 services:
   - type: web
