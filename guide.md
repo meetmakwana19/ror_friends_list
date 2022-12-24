@@ -14,7 +14,9 @@
 14. Got bootstrap navbar into `_header.html.erb`.
     1. Added `link_to` in nav-items which works like anchor tag
 
-## --
+---
+
+---
 
 ### V4 - CRUD
 
@@ -36,7 +38,9 @@
 10. Can edit HTML in files like `index.html.rb` in app/views/friends
     1. Look into form partial `_form.html.erb`
 
-## --
+---
+
+---
 
 ### V5
 
@@ -54,7 +58,9 @@
 9. Removed `<p style="color: green"><%= notice %></p>` from the first line of `index.html.erb` and `show.html.erb`
 10. Corrected the delete method for table in `index.html.erb`.
 
-## --
+---
+
+---
 
 ### Video 6
 
@@ -114,7 +120,9 @@
     2. `config.sign_out_via = :get`
     3. And the error solved !!!!
 
-## --
+---
+
+---
 
 ### Video 7
 
@@ -130,7 +138,9 @@
 
 4. Adding bootstraps in edit and new in registrations dir, new in sessions dir, links in shared dir
 
-## --
+---
+
+---
 
 ### Video 8
 
@@ -155,7 +165,9 @@ User must exist
 11. So in app/controllers/friends_controller.rb added `:user_id` in the `friends_params` method to allow the user_id to be added in the DB.
 12. But the friend is visible in other accounts too, so solvving in next part.
 
-## --
+---
+
+---
 
 ### Video 9 : Solving friends showing in all users
 
@@ -168,7 +180,9 @@ User must exist
 5. Now actions are authorized yeeeee!
 6. Added if logic in the app/views/friends/index.html.erb
 
-## --
+---
+
+---
 
 ### Video 10
 
@@ -177,7 +191,9 @@ User must exist
 3. Gave delete btn for edit.html.erb
 4. Removed friends page again even when not logged in.
 
-## --
+---
+
+---
 
 ### Video 11
 
@@ -186,7 +202,9 @@ User must exist
 3. friends_controller was created when we did scaffold suff containing operations corresponding to CRUD.
 4. **Anything put into controllers can be passed ahead. Methods can be created and ruby logic can be written to implement logics from APIs etc**
 
-## --
+---
+
+---
 
 ### Video 12
 
@@ -196,3 +214,7 @@ User must exist
 4. Added `pg` gem from https://rubygems.org/gems/pg
 5. `bundle install --without production` but this is not working and giving deprecation error and syntax error in gemfile
 6. Removed `gem "sqlite3", "~> 1.4"` from gemfile
+
+---
+
+---
