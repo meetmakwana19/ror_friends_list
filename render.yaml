@@ -16,7 +16,7 @@ services:
       - key: RAILS_MASTER_KEY
         sync: false
   - type: redis
-    namee: redis
+    name: redis
     ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
