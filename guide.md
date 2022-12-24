@@ -218,3 +218,14 @@ User must exist
 ---
 
 ---
+
+### Production deployment settings :
+
+- Take help from https://render.com/docs/deploy-rails
+
+1. Kept the sqlite3 gem in the gemfile
+2. In `puma.rb`
+   1. Uncommented workers and preload_app lines
+3. Added `ENV['RENDER'].present?` check in the `production.rb`
+4. Created `bin\render-build.sh`.
+5. Created `render.yaml`
